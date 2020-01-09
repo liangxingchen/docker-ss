@@ -54,3 +54,4 @@ else
         echo -e "\033[31mError: SS_CONFIG is blank!\033[0m"
         exit 1
     fi
+fi

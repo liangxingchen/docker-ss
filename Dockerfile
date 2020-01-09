@@ -5,8 +5,8 @@ ENV SS_LIBEV_VERSION=3.3.3
 ENV KCP_VERSION=20200103
 
 RUN apk upgrade --no-cache && \
-  apk add --no-cache bash tzdata libsodium privoxy && \
-  apk add --no-cache --virtual .build-deps autoconf build-base curl libev-dev libtool linux-headers udns-dev libsodium-dev mbedtls-dev pcre-dev tar udns-dev && \
+  apk add --no-cache bash tzdata libsodium privoxy rng-tools && \
+  apk add --no-cache --virtual .build-deps c-ares c-ares-dev autoconf build-base curl libev-dev libtool linux-headers udns-dev libsodium-dev mbedtls-dev pcre-dev tar udns-dev && \
   curl -sSLO https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_LIBEV_VERSION/shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz && \
   tar -zxf shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz && \
   cd shadowsocks-libev-$SS_LIBEV_VERSION && \
